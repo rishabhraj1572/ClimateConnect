@@ -1,3 +1,7 @@
+<p style="text-align:center"><img alt="" src="https://github.com/rishabhraj1572/ClimateConnect/blob/main/Screenshots/4.gif?raw=true" style="height:444px; width:200px" /></p>
+
+<p>&nbsp;</p>
+
 <p><span style="font-size:22px"><strong>Climate Connect</strong></span></p>
 
 <p><span style="font-size:16px">Climate Connect is a cutting-edge weather application that delivers users with real-time weather information and comprehensive data analysis. This innovative app provides accurate weather forecasts, current temperatures, wind speed, humidity, and other essential details tailored to the user&#39;s location.</span></p>
@@ -23,9 +27,11 @@
 
 <p>&nbsp;</p>
 
-<p><span style="font-size:20px"><strong>Usage: Add Your Credentials in <a href="https://github.com/rishabhraj1572/ClimateConnect/blob/master/app/src/main/java/com/rrgroup/climateconnect/AppConfig.java">AppConfig.java</a></strong></span></p>
+<p><span style="font-size:20px"><strong>Usage: Add in Credentials in <a href="https://github.com/rishabhraj1572/ClimateConnect/blob/master/app/src/main/java/com/rrgroup/climateconnect/AppConfig.java">AppConfig.java</a></strong></span></p>
 
 <p>&nbsp;</p>
+
+<p style="text-align:center">&nbsp;</p>
 
 <table>
 	<thead>

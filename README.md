@@ -27,7 +27,7 @@
 
 <p>&nbsp;</p>
 
-<p><span style="font-size:20px"><strong>Usage: Add in Credentials in <a href="https://github.com/rishabhraj1572/ClimateConnect/blob/master/app/src/main/java/com/rrgroup/climateconnect/AppConfig.java">AppConfig.java</a></strong></span></p>
+<p><span style="font-size:20px"><strong>Usage: Add Your API Keys in <a href="https://github.com/rishabhraj1572/ClimateConnect/blob/master/app/src/main/java/com/rrgroup/climateconnect/AppConfig.java">AppConfig.java</a></strong></span></p>
 
 <p>&nbsp;</p>
 

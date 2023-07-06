@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Climate Connect</string>
+    <string name="did_you_know"><u>Did You Know...</u></string>
+    <string name="did_you_know_lines">The largest hailstone ever recorded measured about 8 inches (20 centimeters) in diameter.\n\nFog is essentially a cloud that touches the ground. It forms when the air near the surface cools and condenses.\n\nLightning can be incredibly hot! It can reach temperatures of up to 30,000 degrees Celsius - that\'s hotter than the surface of the sun.\n\nThe sound of thunder is caused by the rapid expansion and contraction of air surrounding a lightning bolt. The sound travels slower than light, so we see the flash before hearing the thunder.\n\nWeather forecasts have greatly improved over the years. In the past, forecasts were only accurate up to 24 hours, but now they can be reliable up to a week in advance.</string>
+    <string name="tip">Tip : To change the weather forecast location, simply long-press the location displayed at the top of the screen. This will allow you to input a new location and update the weather information accordingly.</string>
+
+</resources>

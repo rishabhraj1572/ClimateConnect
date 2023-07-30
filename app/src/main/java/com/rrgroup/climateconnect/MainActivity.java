@@ -117,7 +117,11 @@ public class MainActivity extends AppCompatActivity {
         longitude_s = Double.parseDouble(sharedPreferences.getString(longitudeKey, "0"));
         myLocationClicked = sharedPreferences.getBoolean(myLocationClickedKey, true);
         CityName = sharedPreferences.getString(CitySaved,"Your City");
-        retrieveData(CityName);
+        try {
+            retrieveData(CityName);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         //set black color for status bar icons
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

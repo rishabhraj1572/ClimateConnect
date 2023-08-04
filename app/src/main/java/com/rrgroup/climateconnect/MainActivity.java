@@ -425,21 +425,29 @@ public class MainActivity extends AppCompatActivity {
 
             //air quality aqi
             JSONObject air_q = current.getJSONObject("air_quality");
-            double air_quality = air_q.getDouble("pm2_5");
-            double prog = air_quality * 1.5;
-            String aq = String.valueOf(air_quality).split("\\.")[0];
-            SemiCircleArcProgressBar progressBar = findViewById(R.id.arcProgress);
-            if ((int) air_quality >= 60 && (int) air_quality < 100) {
-                progressBar.setProgressBarColor(Color.parseColor("#F8EA9F30"));
-            } else if ((int) air_quality >= 100) {
-                progressBar.setProgressBarColor(Color.parseColor("#FF0000"));
-            }else if((int) air_quality < 60){
-                progressBar.setProgressBarColor(Color.parseColor("#3c7acf"));
+            try{
+                double air_quality = air_q.getDouble("pm2_5");
+                double prog = air_quality * 1.5;
+                String aq = String.valueOf(air_quality).split("\\.")[0];
+                SemiCircleArcProgressBar progressBar = findViewById(R.id.arcProgress);
+                if ((int) air_quality >= 60 && (int) air_quality < 100) {
+                    progressBar.setProgressBarColor(Color.parseColor("#F8EA9F30"));
+                } else if ((int) air_quality >= 100) {
+                    progressBar.setProgressBarColor(Color.parseColor("#FF0000"));
+                }else if((int) air_quality < 60){
+                    progressBar.setProgressBarColor(Color.parseColor("#3c7acf"));
+                }
+                progressBar.setPercentWithAnimation((int) prog);
+                TextView aqi = findViewById(R.id.aqi);
+                aqi.setText(aq);
+            }catch (Exception e){
+                e.printStackTrace();
+                TextView aqi = findViewById(R.id.aqi);
+                aqi.setText("N/A");
+                SemiCircleArcProgressBar progressBar = findViewById(R.id.arcProgress);
+                progressBar.setPercentWithAnimation((150));
             }
-            progressBar.setPercentWithAnimation((int) prog);
-            TextView aqi = findViewById(R.id.aqi);
-            aqi.setText(aq);
-
+            
             //feels like
             int feels_like = current.getInt("feelslike_c");
             TextView feelsLike = findViewById(R.id.feels_like);

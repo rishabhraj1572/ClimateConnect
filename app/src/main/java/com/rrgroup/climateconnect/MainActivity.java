@@ -117,8 +117,11 @@ public class MainActivity extends AppCompatActivity {
         longitude_s = Double.parseDouble(sharedPreferences.getString(longitudeKey, "0"));
         myLocationClicked = sharedPreferences.getBoolean(myLocationClickedKey, true);
         CityName = sharedPreferences.getString(CitySaved,"Your City");
-        retrieveData(CityName);
-
+        try {
+            retrieveData(CityName);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         //set black color for status bar icons
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             View decorView = getWindow().getDecorView();
@@ -421,20 +424,28 @@ public class MainActivity extends AppCompatActivity {
 
             //air quality aqi
             JSONObject air_q = current.getJSONObject("air_quality");
-            double air_quality = air_q.getDouble("pm2_5");
-            double prog = air_quality * 1.5;
-            String aq = String.valueOf(air_quality).split("\\.")[0];
-            SemiCircleArcProgressBar progressBar = findViewById(R.id.arcProgress);
-            if ((int) air_quality >= 60 && (int) air_quality < 100) {
-                progressBar.setProgressBarColor(Color.parseColor("#F8EA9F30"));
-            } else if ((int) air_quality >= 100) {
-                progressBar.setProgressBarColor(Color.parseColor("#FF0000"));
-            }else if((int) air_quality < 60){
-                progressBar.setProgressBarColor(Color.parseColor("#3c7acf"));
+            try{
+                double air_quality = air_q.getDouble("pm2_5");
+                double prog = air_quality * 1.5;
+                String aq = String.valueOf(air_quality).split("\\.")[0];
+                SemiCircleArcProgressBar progressBar = findViewById(R.id.arcProgress);
+                if ((int) air_quality >= 60 && (int) air_quality < 100) {
+                    progressBar.setProgressBarColor(Color.parseColor("#F8EA9F30"));
+                } else if ((int) air_quality >= 100) {
+                    progressBar.setProgressBarColor(Color.parseColor("#FF0000"));
+                }else if((int) air_quality < 60){
+                    progressBar.setProgressBarColor(Color.parseColor("#3c7acf"));
+                }
+                progressBar.setPercentWithAnimation((int) prog);
+                TextView aqi = findViewById(R.id.aqi);
+                aqi.setText(aq);
+            }catch (Exception e){
+                e.printStackTrace();
+                TextView aqi = findViewById(R.id.aqi);
+                aqi.setText("N/A");
+                SemiCircleArcProgressBar progressBar = findViewById(R.id.arcProgress);
+                progressBar.setPercentWithAnimation((150));
             }
-            progressBar.setPercentWithAnimation((int) prog);
-            TextView aqi = findViewById(R.id.aqi);
-            aqi.setText(aq);
 
             //feels like
             int feels_like = current.getInt("feelslike_c");
@@ -532,8 +543,18 @@ public class MainActivity extends AppCompatActivity {
             RecyclerView recyclerView_hourly = findViewById(R.id.hourly_recycler);
             LinearLayoutManager layoutManager_h = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
             recyclerView_hourly.setLayoutManager(layoutManager_h);
-            HourlyAdapter hourlyAdapter = new HourlyAdapter(temp_c_list.subList(0, 25), hour_new.subList(0, 25), weather_icons.subList(0, 25));
-            recyclerView_hourly.setAdapter(hourlyAdapter);
+            if(temp_c_list.size()>24 && hour_new.size()>24 && weather_icons.size()>24){
+                HourlyAdapter hourlyAdapter = new HourlyAdapter(temp_c_list.subList(0, 25), hour_new.subList(0, 25), weather_icons.subList(0, 25));
+                recyclerView_hourly.setAdapter(hourlyAdapter);
+            }
+            else {
+                if (temp_c_list.size() == hour_new.size() && hour_new.size() == weather_icons.size()) {
+                    HourlyAdapter hourlyAdapter = new HourlyAdapter(temp_c_list, hour_new, weather_icons);
+                    recyclerView_hourly.setAdapter(hourlyAdapter);
+                } else {
+
+                }
+            }
             //loading animation for hourly recycler
             LoaderTextView loading = findViewById(R.id.loading);
             loading.setVisibility(View.GONE);
@@ -638,7 +659,5 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
-
 
 }

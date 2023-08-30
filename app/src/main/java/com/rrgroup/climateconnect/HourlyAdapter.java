@@ -38,27 +38,32 @@ public class HourlyAdapter extends RecyclerView.Adapter<HourlyAdapter.HourViewHo
 
     @Override
     public void onBindViewHolder(@NonNull HourViewHolder holder, int position) {
-        String name = temperature.get(position);
-        holder.degree.setText(name);
-        String Time = time.get(position);
-        holder.Time.setText(Time);
-        Integer weather_icon_url = images.get(position);
-        Picasso.get()
-                .load(weather_icon_url)
-                .resize(60, 60)
-                .centerCrop()
-                .into(holder.weather_icon);
+        try {
+            String name = temperature.get(position);
+            holder.degree.setText(name);
+            String Time = time.get(position);
+            holder.Time.setText(Time);
+            Integer weather_icon_url = images.get(position);
+            Picasso.get()
+                    .load(weather_icon_url)
+                    .resize(60, 60)
+                    .centerCrop()
+                    .into(holder.weather_icon);
 
-        if (position == 0) {
-            holder.hourly.setCardBackgroundColor(Color.parseColor("#3c7ad0"));
-            holder.degree.setTextColor(Color.WHITE);
-            holder.Time.setTextColor(Color.WHITE);
-            //holder.Time.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-        } else {
-            holder.degree.setTextColor(Color.BLACK);
-            holder.Time.setTextColor(Color.BLACK);
-            holder.hourly.setCardBackgroundColor(Color.parseColor("#eaeaf1"));
+            if (position == 0) {
+                holder.hourly.setCardBackgroundColor(Color.parseColor("#3c7ad0"));
+                holder.degree.setTextColor(Color.WHITE);
+                holder.Time.setTextColor(Color.WHITE);
+                //holder.Time.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+            } else {
+                holder.degree.setTextColor(Color.BLACK);
+                holder.Time.setTextColor(Color.BLACK);
+                holder.hourly.setCardBackgroundColor(Color.parseColor("#eaeaf1"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
+
     }
 
     @Override

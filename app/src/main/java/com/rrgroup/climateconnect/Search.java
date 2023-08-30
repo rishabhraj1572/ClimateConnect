@@ -36,7 +36,6 @@ public class Search extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     private ArrayAdapter<String> adapter2;
     private CardView myLocation;
-    private boolean myLocationClicked=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

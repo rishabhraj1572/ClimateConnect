@@ -34,17 +34,23 @@ public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.DailyViewHol
 
     @Override
     public void onBindViewHolder(@NonNull DailyViewHolder holder, int position) {
-        String Temp = temperature.get(position);
-        holder.degree.setText(Temp);
-        String Day = day.get(position);
-        holder.day.setText(Day);
-        Integer image = images.get(position);
-        //holder.image.setImageResource(image);
-        Picasso.get()
-                .load(image)
-                .resize(35, 35)
-                .centerCrop()
-                .into(holder.image);
+
+        try{
+            String Temp = temperature.get(position);
+            holder.degree.setText(Temp);
+            String Day = day.get(position);
+            holder.day.setText(Day);
+
+            Integer image = images.get(position);
+            //holder.image.setImageResource(image);
+            Picasso.get()
+                    .load(image)
+                    .resize(35, 35)
+                    .centerCrop()
+                    .into(holder.image);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @Override

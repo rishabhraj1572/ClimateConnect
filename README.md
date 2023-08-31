@@ -47,9 +47,9 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/ClimateConnect/master/Screenshots/1.png" style="height:431px; width:200px" /></td>
-						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/ClimateConnect/master/Screenshots/2.png" style="height:431px; width:200px" /></td>
-						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/ClimateConnect/master/Screenshots/3.png" style="height:431px; width:200px" /></td>
+						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/ClimateConnect/main/Screenshots/1.png" style="height:431px; width:200px" /></td>
+						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/ClimateConnect/main/Screenshots/2.png" style="height:431px; width:200px" /></td>
+						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/ClimateConnect/main/Screenshots/3.png" style="height:431px; width:200px" /></td>
 					</tr>
 				</tbody>
 			</table>

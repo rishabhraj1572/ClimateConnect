@@ -40,26 +40,16 @@
 			<table>
 				<thead>
 					<tr>
-						<th>Splash</th>
-						<th>Login</th>
-						<th>Home</th>
-						<th>New Message</th>
-						<th>My Profile</th>
-						<th>Chat Screen (Empty)</th>
-						<th>Chat Screen</th>
-						<th>User Profile</th>
+						<th>Screenshot 1</th>
+						<th>Screenshot 2</th>
+						<th>Screenshot 3</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/chat_app/main/Screenshots/8.png" style="height:431px; width:200px" /></td>
-						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/chat_app/main/Screenshots/5.png" style="height:431px; width:200px" /></td>
-						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/chat_app/main/Screenshots/7.png" style="height:431px; width:200px" /></td>
-						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/chat_app/main/Screenshots/3.png" style="height:431px; width:200px" /></td>
-						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/chat_app/main/Screenshots/6.png" style="height:431px; width:200px" /></td>
-						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/chat_app/main/Screenshots/4.png" style="height:431px; width:200px" /></td>
-						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/chat_app/main/Screenshots/2.png" style="height:431px; width:200px" /></td>
-						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/chat_app/main/Screenshots/1.png" style="height:431px; width:200px" /></td>
+						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/ClimateConnect/main/Screenshots/1.png" style="height:431px; width:200px" /></td>
+						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/ClimateConnect/main/Screenshots/2.png" style="height:431px; width:200px" /></td>
+						<td><img alt="" src="https://raw.githubusercontent.com/rishabhraj1572/ClimateConnect/main/Screenshots/3.png" style="height:431px; width:200px" /></td>
 					</tr>
 				</tbody>
 			</table>
